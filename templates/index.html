@@ -1,0 +1,6 @@
+{% extends "base.html" %}
+{% block content %}
+{% for page in posts %}
+  {% include "_pagecontent.html" %}
+{% endfor %}
+{% endblock %}

@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% block title %}
+  {% if page.meta.type == 'post' %}
+      {{ page.meta.title }} |
+  {% endif %}
+{% endblock %}
+{% block content %}
+  {% include "_pagecontent.html" %}
+{% endblock %}
