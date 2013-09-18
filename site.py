@@ -7,6 +7,8 @@ from flask_frozen import Freezer
 from argh import *
 import time
 from subprocess import call
+import os
+
 
 # Configuration
 BASE_URL = "http://evenchick.com"
@@ -92,6 +94,8 @@ def build():
     freezer.freeze()
 
 if __name__ == "__main__":
-    parser = ArghParser()
-    parser.add_commands([serve, build])
-    parser.dispatch()
+    # parser = ArghParser()
+    # parser.add_commands([serve, build])
+    # parser.dispatch()
+    port = int(os.environ.get('PORT',5000))
+    app.run(host='0.0.0.0', port=port)
