@@ -7,8 +7,6 @@ from flask_frozen import Freezer
 from argh import *
 import time
 from subprocess import call
-import os
-
 
 # Configuration
 BASE_URL = "http://evenchick.com"
@@ -73,18 +71,6 @@ def serve(server="127.0.0.1", port=8080, debug=DEBUG):
     """
     app.run(host=server, port=port, debug=debug)
 
-# @command
-# # this is hardcoded for now...
-# def push():
-#     """ Push static content to Amazon S3
-#     """
-#     call(["s3cmd",
-#          "-P",                  # make files public
-#          "--guess-mime-type",   # guess mime types for files with extensions
-#          "sync",                # do a sync
-#          "build/.",             # sync the build directory
-#          "s3://www.evenchick.com"]  # sync to this target
-#         )
 
 @command
 def build():
@@ -93,9 +79,7 @@ def build():
     app.debug = False
     freezer.freeze()
 
-# if __name__ == "__main__":
-#     # parser = ArghParser()
-#     # parser.add_commands([serve, build])
-#     # parser.dispatch()
-#     port = int(os.environ.get('PORT',5000))
-#     app.run(host='0.0.0.0', port=port)
+if __name__ == "__main__":
+    parser = ArghParser()
+    parser.add_commands([serve, build])
+    parser.dispatch()
