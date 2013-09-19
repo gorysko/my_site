@@ -6,7 +6,6 @@ from flask.ext.flatpages import pygments_style_defs
 from flask_frozen import Freezer
 from argh import *
 import time
-from subprocess import call
 
 # Configuration
 BASE_URL = "http://evenchick.com"
@@ -55,6 +54,7 @@ def portfolio():
 @app.route('/pygments.css')
 def pygments_css():
     return pygments_style_defs('tango'), 200, {'Content-Type': 'text/css'}
+
 
 # URL Generators
 
