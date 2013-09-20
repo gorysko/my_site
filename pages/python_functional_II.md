@@ -22,8 +22,8 @@ type: post
 Заміна циклів на вислови є доволі простим ділом, майже таким самим , як і заміна умовних блоків ( блоків управління потоком ). Наприклад for може бути напряму переведеним в map():
 
 `
-for e in lst:  func(e)      # statement-based loop
-map(func,lst)           # map()-based loop
+for e in lst:  func(e)    
+map(func,lst)          
 `
 
 Якщо ж нам треба відтворити виконання послідовних висловів - " зроби це, потім це, а потім ще це", то з використанням map() буде виглядати так:
@@ -33,7 +33,7 @@ foo = lambda f: f()
 
 * нехай f1, f2, f3 будуть нашими функціями 
 
-map(foo, [f1,f2,f3])   # map()-based action sequence
+map(foo, [f1,f2,f3])   
 `
 Тобто загалом вся наша програма може бути викликана map() зі списком функцій, які треба послідовно викликати, так як функції ви можете помістити як список - вони ж є об’єктом  :)
 
@@ -42,20 +42,20 @@ map(foo, [f1,f2,f3])   # map()-based action sequence
 
 `
 * стандартний while  
-while <cond>: 
-	<pre-suite> i
-	f <break_condition>: 
+while cond: 
+	pre-suite 
+	if break_condition: 
 		break 
 	else: 
-		<suite> 
+		suite 
 * функціональний 
 def while_block(): 
-	<pre-suite> 
-	if <break_condition>: 
+	pre-suite 
+	if break_condition: 
 		return 1 
 	else: 
-		<suite> 
+		suite 
 		return 0 
-while_FP = lambda: (<cond> and while_block()) or while_FP() while_FP()
+while_FP = lambda: (cond and while_block()) or while_FP() while_FP()
 `
 Цей функціональний варіат все ще не є досконалим - так як він потребує функцію while_block(), яка сама по собі може містити не тільки вислови , але і statements. Ми могли б збочуватися і далі - замінивши if/else на коротко замкнуті висловиб та й звичайна перевірка на місті <cond> , не завжди є корисною так як тіло циклу не може міняти змінні.
