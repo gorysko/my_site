@@ -9,7 +9,7 @@ type: post
 Отже - функціональні можливості присутні в Python
 =================================================
 Python підтримує врізану частину функціонального прогамування , фунції  map(), reduce(), filter() та оператор lambda - мають досить обмежені можливості використання, особливе місце для мене
-займають ще й list comprehensions, хоча й відношення до йункціонального програмування має мале, але дуже полегшує роботу та програмуванн в цілому
+займають ще й list comprehensions, хоча й відношення до функціонального програмування має мале, але дуже полегшує роботу та програмуванн в цілому
 Синтаксис Python  є досит зручним навіть для використання таких врізаних можливостей - наприклад всі основні керуючі елементи (if, elif, else, assert, try, except, finally, for, break, continue, while, def)
 можна представити в функціональному стилі,використовуючи лише функції та оператори. Хоча потім код буде мало чим відмінний від ліспового
 
@@ -20,12 +20,12 @@ Python підтримує врізану частину функціональн
 Перше. про ще треба пам’ятати - це те , що Python створює так званне "коротке замикання"
 Ось як буде виглядати еквівалент блоку if/ elif/ else :
 
-       	  `
-	   # Normal statement-based flow control
+       `
+	   Normal statement-based flow control
   	   if <cond1>: func1() elif <cond2>: func2() else: func3()
-   	   # Equivalent "short circuit"
+   	   Equivalent "short circuit"
   	   expression (<cond1> and func1()) or (<cond2> and func2()) or (func3())
-	   # Example "short circuit" expression
+	   Example "short circuit" expression
 	     x = 3
 	     def pr(s): return s
 	     (x==1 and pr('one')) or (x==2 and pr('two')) or (pr('other'))
