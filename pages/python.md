@@ -27,10 +27,10 @@ Python підтримує врізану частину функціональн
   	   expression (<cond1> and func1()) or (<cond2> and func2()) or (func3())
 	   Example "short circuit" expression
 	     x = 3
-	     def pr(s): return s
-	     (x==1 and pr('one')) or (x==2 and pr('two')) or (pr('other'))
+	     def foo(s): return s
+	     (x==1 and foo('one')) or (x==2 and foo('two')) or (foo('other'))
 	     x = 2
-	     (x==1 and pr('one')) or (x==2 and pr('two')) or (pr('other'))
+	     (x==1 and foo('one')) or (x==2 and foo('two')) or (foo('other'))
 	   `
 
 Дуже красиво ? Правда?
@@ -39,8 +39,8 @@ Python підтримує врізану частину функціональн
 то використовуючи lambda можемо трохи переписати наш вираз:
 
          `
-	   pr = lambda s:s
-	   namenum = lambda x: (x==1 and pr("one")) or (x==2 and pr("two")) or (pr("other"))
+	   foo = lambda s:s
+	   namenum = lambda x: (x==1 and foo("one")) or (x==2 and foo("two")) or (foo("other"))
 	   namenum(1)
 	   namenum(2)
 	   namenum(3)
