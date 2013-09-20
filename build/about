@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <title>
+  
+Gorysko</title>
+    <meta charset="utf-8">
+    <meta name="description" content="Gorysko">
+    <meta name="author" content="Gorysko">
+    <meta name="viewport" content="width=device-width, initial-scale=1,
+    maximum-scale=1, user-scalable=no">
+    <link rel="shortcut icon" href= "/static/favicon.ico">
+
+    <link href='http://fonts.googleapis.com/css?family=Lora' rel='stylesheet' type='text/css'>
+    
+    <link rel="stylesheet" type="text/css" href="/static/css/style.css">
+    
+    <link rel="stylesheet" href="/pygments.css">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+  <div class="container">
+    <div class="sidebar">
+      <a href="/"><h1>Gorysko</h1></a>
+<ul>
+  <a href="/about"><li>About</li></a>
+  <a href="/portfolio"><li>CV and projects</li></a>
+  <a href="http://github.com/gorysko"><li>Github</li></a>
+</ul>
+    </div>
+    <div class="content">
+      
+  <div class="page">
+  <div class="page-header">
+    <a href="/about"><h1>Hi, I&#39;m Gorysko and I&#39;m smth like programmer on python ( mainly ) and ruby , and ... clojure</h1></a>
+    
+  </div>
+  <ul>
+<li>Currently, I'm the backend developer of such thing at <a href="http://particles.pro/">Particles</a> and
+freelance bioinformatician scientist</li>
+<li>I was making my PhD in bioinforatics at Germany <a href="http://uni-saarland.de">Saarland-uni</a></li>
+<li>I've worked at <a href="http://www.helmholtz-hzi.de/en/">Helmholtz</a>, like  a bioinformatician, at <a href="http://sphereinc.com">Sphere consulting</a> like ruby on rails developer - at this project <a href="http://styleup.ru">StyleUP</a>, and at <a href="http://softserve.ua">Softserve</a> - what i was doing it's a secret because it was project with a Cisco</li>
+<li>My resume is available <a href="/static/igor_lushchyk.pdf">here</a></li>
+</ul>
+</div>
+
+
+    </div>
+  </div>
+  </body>
+
+</html>
