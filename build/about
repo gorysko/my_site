@@ -4,7 +4,7 @@
   <head>
     <title>
   
-Gorysko</title>
+</title>
     <meta charset="utf-8">
     <meta name="description" content="Gorysko">
     <meta name="author" content="Gorysko">
@@ -46,11 +46,20 @@ freelance bioinformatician scientist</li>
 <li>I've worked at <a href="http://www.helmholtz-hzi.de/en/">Helmholtz</a>, like  a bioinformatician, at <a href="http://sphereinc.com">Sphere consulting</a> like ruby on rails developer - at this project <a href="http://styleup.ru">StyleUP</a>, and at <a href="http://softserve.ua">Softserve</a> - what i was doing it's a secret because it was project with a Cisco</li>
 <li>My resume is available <a href="/static/igor_lushchyk.pdf">here</a></li>
 </ul>
-</div>
-
+  	
 
     </div>
   </div>
   </body>
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-44207957-1', 'gorysko.com');
+    ga('send', 'pageview');
+
+  </script>
 
 </html>
