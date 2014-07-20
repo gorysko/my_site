@@ -1,6 +1,12 @@
 {% extends "base.html" %}
 {% block content %}
 {% for page in posts %}
-  {% include "_pagecontent.html" %}
+  <div class='post' style='border: 2px solid; border-radius: 25px; padding: 6px; margin: 10px;'>
+  <a href="/{{page.path}}"><h1>{{ page.meta.title }}</h1></a>
+    {% if page.meta.type == 'post' %}
+    <span class="date">{{ page.meta.date.strftime("%b %e, %Y")}}</span>
+    {{page}}
+    {% endif %}
+  </div>
 {% endfor %}
 {% endblock %}

@@ -18,14 +18,14 @@ FREEZER_IGNORE_MIMETYPE_WARNINGS = True
 FREEZER_DEFAULT_MIMETYPE = "text/html"
 
 # Set up Flask
-APP = Flask(__name__)
-APP.config.from_object(__name__)
+app = Flask(__name__)
+app.config.from_object(__name__)
 
 # Set up Flask extensions
-ASSETS = Environment(APP)
-MARKDOWN = Markdown(APP)
-PAGES = FlatPages(APP)
-FREEZER = Freezer(APP)
+ASSETS = Environment(app)
+MARKDOWN = Markdown(app)
+PAGES = FlatPages(app)
+FREEZER = Freezer(app)
 
 # Helper functions
 def get_pages_by_type(page_type):
@@ -36,20 +36,20 @@ def get_pages_by_type(page_type):
     return matches
 
 # Flask Routing
-@APP.route("/")
+@app.route("/")
 def home():
     """Renders home page."""
     post_list = get_pages_by_type('post')
     latest = sorted(post_list, reverse=True, key=lambda p: p.meta['date'])
     return render_template("index.html", posts=latest[:5])
 
-@APP.route("/<path:path>/")
+@app.route("/<path:path>/")
 def page(path):
     """Renders page."""
     source = PAGES.get_or_404(path)
     return render_template("page.html", page=source)
 
-@APP.route("/portfolio/")
+@app.route("/portfolio/")
 def portfolio():
     """Renders portfolio page"""
     portfolio_pages = get_pages_by_type('portfolio')
@@ -57,7 +57,7 @@ def portfolio():
                          key=lambda p: p.meta['date'])
     return render_template("portfolio.html", items=date_sorted)
 
-@APP.route('/pygments.css')
+@app.route('/pygments.css')
 def pygments_css():
     """Renders css."""
     return pygments_style_defs('tango'), 200, {'Content-Type': 'text/css'}
@@ -69,7 +69,7 @@ def pygments_css():
 def page_generator():
     """Generaes page."""
     for source in list(PAGES):
-        yield ("/%s" % str(source.path))
+        yield "/%s" % str(source.path)
 
 # CLI Commands
 @command
@@ -77,17 +77,16 @@ def serve(server="127.0.0.1", port=8080, debug=DEBUG):
     """ Start a server to run the site
         default: 127.0.0.1:8080
     """
-    APP.run(host=server, port=port, debug=debug)
+    app.run(host=server, port=port, debug=debug)
 
 
 @command
 def build():
     """ Generate a static version of the site
     """
-    APP.debug = False
+    app.debug = False
     FREEZER.freeze()
 
 if __name__ == "__main__":
     parser = ArghParser()
     parser.add_commands([serve, build])
-    parser.dispatch()
